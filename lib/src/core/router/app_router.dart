@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app_skeleton/src/features/home/presentation/home_page.dart';
 import 'package:go_router/go_router.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-import 'app_routes.dart';
-
+import '../../features/home/presentation/home_page.dart';
 part 'app_router.g.dart';
 
 /// Provides the app's router configuration using GoRouter.
@@ -13,7 +11,7 @@ part 'app_router.g.dart';
 /// Routes can be added to the `routes` list.
 @Riverpod(keepAlive: true)
 GoRouter router(Ref ref) {
-  return GoRouter(initialLocation: AppRoutes.home, routes: $appRoutes);
+  return GoRouter(initialLocation: HomeRoute().location, routes: $appRoutes);
 }
 
 @TypedGoRoute<HomeRoute>(path: '/')
